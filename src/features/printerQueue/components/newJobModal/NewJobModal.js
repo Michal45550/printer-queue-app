@@ -5,7 +5,7 @@ import * as actions from "../../actions";
 import {useDispatch} from "react-redux";
 import {useState} from "react";
 
-const AddJobModal = () => {
+const NewJobModal = () => {
     const dispatch = useDispatch();
 
     const JOB_DATA = {
@@ -64,4 +64,4 @@ const AddJobModal = () => {
     );
 };
 
-export default AddJobModal;
+export default NewJobModal;
