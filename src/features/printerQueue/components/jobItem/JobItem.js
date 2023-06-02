@@ -1,12 +1,12 @@
-import './Job.css';
-import img from '../../assets/3d-modeling (1).png';
+import './JobItem.css';
+import img from '../../assets/3d-modeling.png';
 import clockIcon from '../../assets/clock.png';
 import authorIcon from '../../assets/user.png';
 import deleteIcon from '../../assets/delete.png';
 import {useDispatch} from "react-redux";
-import * as actions from "../../redux/actions/printerQueueAction";
+import * as actions from "../../actions";
 
-const Job = ({job}) => {
+const JobItem = ({job}) => {
 
     const dispatch = useDispatch();
 
@@ -20,15 +20,15 @@ const Job = ({job}) => {
         dispatch({type: actions.DELETE_JOB_REQUESTED, payload: job.name});
     }
 
-    function toHoursAndMinutes(totalSeconds) {
-        const totalMinutes = Math.floor(totalSeconds / 60);
-
-        const seconds = totalSeconds % 60;
-        const hours = Math.floor(totalMinutes / 60);
-        const minutes = totalMinutes % 60;
-
-        return {h: hours, m: minutes, s: seconds};
-    }
+    // function toHoursAndMinutes(totalSeconds) {
+    //     const totalMinutes = Math.floor(totalSeconds / 60);
+    //
+    //     const seconds = totalSeconds % 60;
+    //     const hours = Math.floor(totalMinutes / 60);
+    //     const minutes = totalMinutes % 60;
+    //
+    //     return {h: hours, m: minutes, s: seconds};
+    // }
 
     return (
         <div className="job">
@@ -45,7 +45,7 @@ const Job = ({job}) => {
                 </div>
             </div>
 
-            <img className="job-image" src={img} alt="Job img" width="60px" height="60px"/>
+            <img className="job-image" src={img} alt="JobItem img" width="60px" height="60px"/>
 
             <div className="details">
                 <h3>{job.index + 1}. &nbsp; {job.name}</h3>
@@ -62,4 +62,4 @@ const Job = ({job}) => {
     );
 };
 
-export default Job;
+export default JobItem;

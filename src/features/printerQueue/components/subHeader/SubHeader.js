@@ -1,6 +1,6 @@
-import './Header.css';
+import './SubHeader.css';
 
-const Header = (props) => {
+const SubHeader = (props) => {
 
     return (
         <div className={`header ${props.topLine && "topLine"} ${props.bottomLine && "bottomLine"}`}>
@@ -10,4 +10,4 @@ const Header = (props) => {
     );
 };
 
-export default Header;
+export default SubHeader;

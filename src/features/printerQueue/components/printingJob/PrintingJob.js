@@ -1,7 +1,7 @@
 import './PrintingJob.css';
-import Header from "../header/Header";
+import SubHeader from "../subHeader/SubHeader";
 import {useDispatch, useSelector} from "react-redux";
-import * as actions from "../../redux/actions/printerQueueAction";
+import * as actions from "../../actions";
 
 const PrintingJob = () => {
 
@@ -16,14 +16,14 @@ const PrintingJob = () => {
 
     return (
         <div className="printing-job">
-            <Header title={`CURRENT PRINTING JOB  ${job ? '|' : ''}  ${job?.duration || ''} ${job?.status === 'stopped' ? "SOPPED" : ''}`}
-                    bottomLine={true}>
+            <SubHeader title={`CURRENT PRINTING JOB  ${job ? '|' : ''}  ${job?.duration || ''} ${job?.status === 'stopped' ? "SOPPED" : ''}`}
+                       bottomLine={true}>
                 {job && <button className="cancel-button" onClick={handleCancel} >
                     <div className="pause-icon"/>
                     <div className="pause-icon"/>
                 </button>}
 
-            </Header>
+            </SubHeader>
             {job ? job.name : 'No job is printing ...'}
         </div>
     );

@@ -1,11 +1,11 @@
 import {Provider} from 'react-redux'
-import store from './redux/store';
-import PrinterQueue from "./components/printerQueue/PrinterQueue";
+import index from './store';
+import PrinterQueue from "./features/printerQueue";
 
-function App() {
+const App = () => {
 
     return (
-        <Provider store={store}>
+        <Provider store={index}>
             <PrinterQueue/>
         </Provider>
     );

@@ -6,7 +6,7 @@ import rootReducer from './reducers'
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(
+const index = createStore(
     rootReducer,
     {},
     composeWithDevTools(applyMiddleware(sagaMiddleware))
@@ -14,4 +14,4 @@ const store = createStore(
 
 sagaMiddleware.run(rootSaga);
 
-export default store;
+export default index;

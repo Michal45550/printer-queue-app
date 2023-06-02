@@ -5,9 +5,9 @@ import {
     takeEvery
 } from 'redux-saga/effects'
 
-import * as actions from '../actions/printerQueueAction'
+import * as actions from './actions'
 
-import * as api from '../api/printerQueueApi';
+import * as api from './api';
 
 function* getAllJobs() {
     yield put({ type: actions.SET_LOADING });
@@ -49,7 +49,7 @@ function* cancelJob({ payload }) {
     yield call(getAllJobs);
 }
 
-export default function* PrinterQueueSaga() {
+export default function* Sagas() {
     yield takeEvery(actions.GET_JOBS_REQUESTED, getAllJobs)
     yield takeEvery(actions.CREATE_JOB_REQUESTED, createJob)
     yield takeEvery(actions.DELETE_JOB_REQUESTED, deleteJob)

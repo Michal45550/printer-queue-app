@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import PrinterQueue from './printerQueueReducer';
+import PrinterQueue from '../features/printerQueue/reducer';
 
 export default combineReducers({
     PrinterQueue,

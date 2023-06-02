@@ -1,6 +1,6 @@
 import './Queue.css';
-import Header from "../header/Header";
-import Job from "../job/Job";
+import SubHeader from "../subHeader/SubHeader";
+import JobItem from "../jobItem/JobItem";
 import NewJobModal from "../newJobModal/NewJobModal";
 import {useSelector} from "react-redux";
 import loadingIcon from '../../assets/Spinner-1s-200px.gif';
@@ -13,14 +13,14 @@ const Queue = () => {
     return (
         <div className="queue">
 
-            <Header title="QUEUE" topLine={true}>
+            <SubHeader title="QUEUE" topLine={true}>
                 {loading && <img src={loadingIcon} alt="Loading" width="50px" height="50px"/>}
                 <NewJobModal/>
-            </Header>
+            </SubHeader>
 
             {queueJobs.length ? queueJobs.map((job, index) =>
-                <Job job={{...job, index, last: index === queueJobs.length - 1}}
-                     key={index}/>
+                <JobItem job={{...job, index, last: index === queueJobs.length - 1}}
+                         key={index}/>
             ) : "-no jobs-"}
 
         </div>

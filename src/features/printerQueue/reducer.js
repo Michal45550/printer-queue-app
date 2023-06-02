@@ -2,10 +2,8 @@ import {
     SET_LOADING,
     GET_JOBS,
     CREATE_JOB,
-    DELETE_JOB,
-    REORDER_JOB,
-    CANCEL_JOB
-} from '../actions/printerQueueAction'
+    REORDER_JOB
+} from './actions'
 
 const initialState = {
     loading: false,
@@ -13,7 +11,7 @@ const initialState = {
     printingJob: null
 }
 
-const PrinterQueueReducer = (state = initialState, {type, payload}) => {
+const Reducer = (state = initialState, {type, payload}) => {
     switch(type) {
         case SET_LOADING:
             return {
@@ -44,4 +42,4 @@ const PrinterQueueReducer = (state = initialState, {type, payload}) => {
     }
 }
 
-export default PrinterQueueReducer;
+export default Reducer;

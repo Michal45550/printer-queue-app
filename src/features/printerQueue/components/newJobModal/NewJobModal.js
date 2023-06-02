@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './NewJobModal.css';
 import Modal from '@mui/material/Modal';
-import * as actions from "../../redux/actions/printerQueueAction";
+import * as actions from "../../actions";
 import {useDispatch} from "react-redux";
 import {useState} from "react";
 
