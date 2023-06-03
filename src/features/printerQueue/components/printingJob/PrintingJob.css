@@ -2,6 +2,10 @@
     width: 600px;
 }
 
+.job-panel{
+    display: flex;
+}
+
 .cancel-button{
     width: 38px;
     height: 38px;

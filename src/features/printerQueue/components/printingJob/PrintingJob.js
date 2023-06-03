@@ -1,7 +1,10 @@
 import './PrintingJob.css';
 import SubHeader from "../subHeader/SubHeader";
 import {useDispatch, useSelector} from "react-redux";
-import * as actions from "../../actions";
+import {useEffect, useState} from "react";
+import {toHoursAndMinutesDisplay} from "../../utils/utils";
+import {CANCEL_JOB_REQUESTED} from "../../actions";
+import img from '../../assets/3d-modeling.png';
 
 const PrintingJob = () => {
 
@@ -9,22 +12,38 @@ const PrintingJob = () => {
 
     const job = useSelector(({PrinterQueue}) => PrinterQueue.printingJob);
 
+    const [duration, setDuration] = useState('');
+
+    useEffect(() => {
+        job && setDuration(toHoursAndMinutesDisplay(job.duration));
+    }, [job]);
+
     const handleCancel = () => {
-        dispatch({type: actions.CANCEL_JOB_REQUESTED, payload: job.name});
+        dispatch({type: CANCEL_JOB_REQUESTED, payload: job.name});
     }
 
 
     return (
         <div className="printing-job">
-            <SubHeader title={`CURRENT PRINTING JOB  ${job ? '|' : ''}  ${job?.duration || ''} ${job?.status === 'stopped' ? "SOPPED" : ''}`}
-                       bottomLine={true}>
-                {job && <button className="cancel-button" onClick={handleCancel} >
+            <SubHeader
+                title={`CURRENT PRINTING JOB  ${job ? '|' : ''}  [${duration || ''} LEFT] ${job?.status === 'stopped' ? "SOPPED" : ''}`}
+                bottomLine={true}
+            >
+                {job && <button className="cancel-button" onClick={handleCancel}>
                     <div className="pause-icon"/>
                     <div className="pause-icon"/>
                 </button>}
-
             </SubHeader>
-            {job ? job.name : 'No job is printing ...'}
+
+
+            {job ? (<div className="job-panel">
+                    <img className="job-image" src={img} alt="JobItem img" width="45%" height="260px"/>
+                    <div className="job-details">
+                        <h2>{job.name}</h2>
+                        <h4>Mor caldron</h4>
+                    </div>
+                </div>)
+                : 'No job is printing ...'}
         </div>
     );
 };

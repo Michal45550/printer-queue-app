@@ -1,9 +1,9 @@
 import * as React from 'react';
 import './NewJobModal.css';
 import Modal from '@mui/material/Modal';
-import * as actions from "../../actions";
 import {useDispatch} from "react-redux";
 import {useState} from "react";
+import {CREATE_JOB_REQUESTED} from "../../actions";
 
 const NewJobModal = () => {
     const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const NewJobModal = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch({type: actions.CREATE_JOB_REQUESTED, payload: jobData});
+        dispatch({type: CREATE_JOB_REQUESTED, payload: jobData});
         handleClose();
         setJobData(JOB_DATA);
     }
