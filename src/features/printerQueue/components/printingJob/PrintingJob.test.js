@@ -1,21 +1,20 @@
 import {createStore} from "redux";
-import reducers from "../../../../../store/reducers";
+import reducers from "../../../../store/reducers";
 import {mount} from "enzyme";
 import {Provider} from "react-redux";
+import PrintingJob from "./PrintingJob";
 
-import NewJobModal from "../NewJobModal";
-
-describe('<NewJobModal />', () => {
-    it('renders new job modal', () => {
+describe('<PrintingJob />', () => {
+    it('renders printing job', () => {
         const store = createStore(reducers);
 
         const wrapper = mount(
             <Provider store={store}>
-                <NewJobModal/>
+                <PrintingJob/>
             </Provider>,
         );
 
-        expect(wrapper.find(NewJobModal).exists()).toBe(true);
+        expect(wrapper.find(PrintingJob).exists()).toBe(true);
 
         wrapper.unmount();
     });

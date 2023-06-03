@@ -1,12 +1,12 @@
-.printing-job{
+.printing-job {
     width: 600px;
 }
 
-.job-panel{
+.job-panel {
     display: flex;
 }
 
-.cancel-button{
+.cancel-button {
     width: 38px;
     height: 38px;
     background: #FFFFFF;
@@ -16,7 +16,7 @@
     cursor: pointer;
 }
 
-.pause-icon{
+.pause-icon {
     width: 3.6px;
     height: 14px;
     background: #000000;

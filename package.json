@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "@cfaester/enzyme-adapter-react-18": "^0.7.0",
+    "axios-mock-adapter": "^1.21.4",
     "enzyme": "^3.11.0"
   }
 }

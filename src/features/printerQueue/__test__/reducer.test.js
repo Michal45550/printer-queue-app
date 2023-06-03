@@ -1,7 +1,6 @@
 import Reducer from "../reducer";
-import {CREATE_JOB, GET_JOBS, GET_JOBS_REQUESTED, REORDER_JOB, SET_LOADING} from "../actions";
+import {CREATE_JOB, GET_JOBS, REORDER_JOB, SET_LOADING} from "../actions";
 import {CREATED_JOB, JOBS, PRINTER_QUEUE_STATE} from "../__data__/mockData";
-import * as actions from "../actions";
 
 describe('printerQueueReducer', () => {
 

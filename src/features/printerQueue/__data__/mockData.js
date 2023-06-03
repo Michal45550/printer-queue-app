@@ -14,13 +14,13 @@ export const JOBS = [
         "name": "Geometric Heart Key ring B",
         "duration": 3600,
         "status": "queued"
-    },
-    {
-        "name": "Geometric Heart Key ring C",
-        "duration": 3600,
-        "status": "queued"
     }
 ];
+
+export const NEW_JOB = {
+    "name": "Geometric Heart Key ring C",
+    "duration": 3600
+}
 
 export const CREATED_JOB = {
     "name": "Geometric Heart Key ring C",

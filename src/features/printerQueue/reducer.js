@@ -1,9 +1,4 @@
-import {
-    SET_LOADING,
-    GET_JOBS,
-    CREATE_JOB,
-    REORDER_JOB
-} from './actions'
+import {CREATE_JOB, GET_JOBS, REORDER_JOB, SET_LOADING} from './actions'
 
 const initialState = {
     loading: false,
@@ -12,7 +7,7 @@ const initialState = {
 }
 
 const Reducer = (state = initialState, {type, payload}) => {
-    switch(type) {
+    switch (type) {
         case SET_LOADING:
             return {
                 ...state,

@@ -1,48 +1,43 @@
-import {
-    put,
-    call,
-    takeLatest,
-    takeEvery
-} from 'redux-saga/effects'
+import {call, put, takeEvery, takeLatest} from 'redux-saga/effects'
 
 import * as actions from './actions'
 
 import * as api from './api';
 
 function* getAllJobs() {
-    yield put({ type: actions.SET_LOADING });
+    yield put({type: actions.SET_LOADING});
 
     const allJobs = yield call(api.getAllJobs);
 
-    yield put({ type: actions.GET_JOBS, payload: allJobs });
+    yield put({type: actions.GET_JOBS, payload: allJobs});
 }
 
-function* createJob({ payload }) {
-    yield put({ type: actions.SET_LOADING });
+function* createJob({payload}) {
+    yield put({type: actions.SET_LOADING});
 
     const newJob = yield call(api.createJob, payload);
 
-    yield put({ type: actions.CREATE_JOB, payload: newJob });
+    yield put({type: actions.CREATE_JOB, payload: newJob});
 }
 
-function* deleteJob({ payload }) {
-    yield put({ type: actions.SET_LOADING });
+function* deleteJob({payload}) {
+    yield put({type: actions.SET_LOADING});
 
     yield call(api.deleteJob, payload);
 
     yield call(getAllJobs);
 }
 
-function* reorderJob({ payload }) {
-    yield put({ type: actions.SET_LOADING });
+function* reorderJob({payload}) {
+    yield put({type: actions.SET_LOADING});
 
     const allJobs = yield call(api.reorderJob, payload);
 
-    yield put({ type: actions.REORDER_JOB, payload: allJobs });
+    yield put({type: actions.REORDER_JOB, payload: allJobs});
 }
 
-function* cancelJob({ payload }) {
-    yield put({ type: actions.SET_LOADING });
+function* cancelJob({payload}) {
+    yield put({type: actions.SET_LOADING});
 
     yield call(api.cancelJob, payload);
 

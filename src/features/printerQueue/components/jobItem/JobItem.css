@@ -1,4 +1,4 @@
-.job{
+.job {
     background: #F7F9FC;
     border: 1px solid #003A5D;
     border-radius: 8px;
@@ -9,13 +9,13 @@
     align-items: center;
 }
 
-.reorder{
+.reorder {
     width: 55px;
     height: 100%;
     border-right: 1px solid #003A5D;
 }
 
-.reorder-button{
+.reorder-button {
     height: 50%;
     display: flex;
     flex-direction: column;
@@ -24,23 +24,23 @@
     cursor: pointer;
 }
 
-.reorder-button:first-of-type{
+.reorder-button:first-of-type {
     border-bottom: 1px solid #003A5D;
 }
 
-.disable-button{
+.disable-button {
     cursor: default;
 }
 
-.disable-button .arrow-up{
+.disable-button .arrow-up {
     border-bottom: 7px solid #bfbdbd;
 }
 
-.disable-button .arrow-down{
+.disable-button .arrow-down {
     border-top: 7px solid #bfbdbd;
 }
 
-.disable-button .underline{
+.disable-button .underline {
     background: #bfbdbd;
 }
 
@@ -60,7 +60,7 @@
     border-top: 7px solid #33AADD;
 }
 
-.underline{
+.underline {
     margin: 6px 0 6px 0;
     background: #33AADD;
     width: 30px;
@@ -68,11 +68,11 @@
     border-radius: 2px;
 }
 
-.job-image{
+.job-image {
     margin: 17px;
 }
 
-.details{
+.details {
     width: 500px;
 }
 
@@ -81,22 +81,23 @@
     margin-top: 0;
 }
 
-.details label{
+.details label {
     margin-left: 5px;
 }
 
-.duration{
+.duration {
     position: relative;
     margin-left: 20px !important;
     margin-right: 20px !important;
 }
 
-.duration .clock-icon{
+.duration .clock-icon {
     position: absolute;
     left: -20px;
     bottom: 3px;
 }
 
-.delete{
+.delete {
     margin: 12px;
+    cursor: pointer;
 }
