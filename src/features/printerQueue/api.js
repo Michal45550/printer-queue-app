@@ -33,7 +33,7 @@ export const deleteJob = async (name) => {
 
 export const reorderJob = async ({name, up}) => {
     try {
-        const reorderedJobs = await axiosInstance.post(`job/move/?name=${name}&up=${up}`);
+        const reorderedJobs = await axiosInstance.post(`job/move/?name=${name}&up=${up}`, {}, {headers: {'Content-Type': 'application/json'}});
         return reorderedJobs.data;
     } catch (err) {
         return console.error(err);
